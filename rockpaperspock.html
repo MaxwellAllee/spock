@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <H1 class "text-center">
+                    Rock, Paper, Scissors, Spock, and Lizard
+                </H1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button onclick="myRock()">Rock</button>
+                <button onclick="myPaper()">Paper</button>
+                <button onclick="myScissors()">Scissors</button>
+                <button onclick="mySpock()">Spock</button>
+                <button onclick="myLizard()">Lizard</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://i.chzbgr.com/full/6307697664/h88C728CD/" alt="diagram">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p id="userchoice-T"></p>
+                <p id="computerChoicesT"></p>
+                <p id="win-T"></p>
+                <p id="loss-T"></p>
+                <p id="ties-T"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var computerChoices = ["rock", "paper", "scissors", "spock", "lizards"]
+        var win = 0;
+        var lose = 0;
+        var tie = 0;
+
+        var userChoiceT = document.getElementById("userchoice-T");
+        var computerChoicesT = document.getElementById("computerChoicesT");
+        var winT = document.getElementById("win-T");
+        var lossT = document.getElementById("loss-T");
+        var tiesT = document.getElementById("ties-T");
+        var userGuess
+
+        function myRock() {
+            var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            userGuess = "rock";
+            if (compGuess === "scissors") {
+                win++;
+            }
+            if (compGuess === "paper") {
+                lose++;
+            }
+            if (compGuess === "rock") {
+                tie++;
+            }
+            if (compGuess === "spock") {
+                lose++;
+            }
+            if (compGuess === "lizards") {
+                win++;
+            }
+            console.log(compGuess);
+
+
+
+            userChoiceT.textContent = "you chose: " + userGuess;
+            computerChoicesT.textContent = "The computer chose: " + compGuess;
+            winT.textContent = "wins: " + win;
+            lossT.textContent = "losses: " + lose;
+            tiesT.textContent = "ties: " + tie;
+            console.log(userGuess)
+        };
+
+
+        function myPaper() {
+            var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            userGuess = "paper";
+            if (compGuess === "scissors") {
+                lose++;
+            }
+            if (compGuess === "paper") {
+                tie++;
+            }
+            if (compGuess === "rock") {
+                userGuess
+            }
+            if (compGuess === "spock") {
+                win++;
+            }
+            if (compGuess === "lizards") {
+                lose++;
+            }
+            userChoiceT.textContent = "you chose: " + userGuess;
+            computerChoicesT.textContent = "The computer chose: " + compGuess;
+            winT.textContent = "wins: " + win;
+            lossT.textContent = "losses: " + lose;
+            tiesT.textContent = "ties: " + tie;
+            console.log(userGuess)
+        };
+        function myScissors() {
+            var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            userGuess = "scissor";
+            if (compGuess === "scissors") {
+                tie++;
+            }
+            if (compGuess === "paper") {
+                win++;
+            }
+            if (compGuess === "rock") {
+                lose++;
+            }
+            if (compGuess === "spock") {
+                los++;
+            }
+            if (compGuess === "lizards") {
+                win++;
+            }
+            userChoiceT.textContent = "you chose: " + userGuess;
+            computerChoicesT.textContent = "The computer chose: " + compGuess;
+            winT.textContent = "wins: " + win;
+            lossT.textContent = "losses: " + lose;
+            tiesT.textContent = "ties: " + tie;
+            console.log(userGuess)
+        };
+        function mySpock() {
+            var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            userGuess = "spock";
+            if (compGuess === "scissors") {
+                win++;
+            }
+            if (compGuess === "paper") {
+                lose++;
+            }
+            if (compGuess === "rock") {
+                win++;
+            }
+            if (compGuess === "spock") {
+                tie++;
+            }
+            if (compGuess === "lizards") {
+                lose++;
+            }
+            userChoiceT.textContent = "you chose: " + userGuess;
+            computerChoicesT.textContent = "The computer chose: " + compGuess;
+            winT.textContent = "wins: " + win;
+            lossT.textContent = "losses: " + lose;
+            tiesT.textContent = "ties: " + tie;
+            console.log(userGuess)
+        };
+        function myLizard() {
+            var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            userGuess = "lizard";
+            if (compGuess === "scissors") {
+                lose++;
+            }
+            if (compGuess === "paper") {
+                win++;
+            }
+            if (compGuess === "rock") {
+                lose++;
+            }
+            if (compGuess === "spock") {
+                win++;
+            }
+            if (compGuess === "lizards") {
+                tie++;
+            }
+            userChoiceT.textContent = "you chose: " + userGuess;
+            computerChoicesT.textContent = "The computer chose: " + compGuess;
+            winT.textContent = "wins: " + win;
+            lossT.textContent = "losses: " + lose;
+            tiesT.textContent = "ties: " + tie;
+            console.log(userGuess)
+        };
+
+
+
+
+    </script>
+
+</body>
+
+</html>
